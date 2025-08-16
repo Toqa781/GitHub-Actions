@@ -19,3 +19,24 @@ jobs:
             
             - name: checkout repo file
               run : ls
+
+            - name: upload artifact
+              uses: actions/upload-artifact@v3
+              with:
+                name: dragon-file
+                path: dragon.txt
+            
+    test_job2:
+        runs-on: ubuntu-latest
+        needs: Ascii_job
+        steps:
+            - name: download artifact
+              uses: actions/download-artifact@v3
+              with:
+                name: dragon-file
+            
+            - name: Test file
+              run: grep -i "dragon" dragon.txt
+
+
+        
