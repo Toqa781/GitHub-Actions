@@ -17,9 +17,13 @@ jobs:  # mandatory to be named "jobs"
 
         steps:      # like command you will run on GitHub Cloud
             - name: checkout
-              run: actions/checkout@v5.0.0
+              uses: actions/checkout@v5.0.0
+
+
             - name: list files
-              run: ./script.sh
+              run: |
+                chmod +x script.sh
+                 ./script.sh
     # second_job:  # can be named with anything
     #     needs: first_job #start running second_job after first_job1 finishes
     #     runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
