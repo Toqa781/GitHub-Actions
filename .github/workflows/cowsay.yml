@@ -1,0 +1,21 @@
+name: cowsay
+on: push
+
+jobs:
+    Ascii_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: install cowsay program
+              run: sudo apt-get install cowsay -y
+            
+            - name: Execute cowsay CMD
+              run: cowsay -f dragon "Run for cover, iam a Dragon....RAWR" >> dragon.txt
+
+            - name: Test file exists
+              run: grep -i "dragon" dragon.txt
+            
+            - name: Read File
+              run: cat dragon.txt
+            
+            - name: checkout repo file
+              run : ls
