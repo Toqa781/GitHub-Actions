@@ -1,0 +1,22 @@
+name: my first workflow | shell script
+on: 
+    # workflow_dispatch: # by default on main
+    push: 
+        branches:  # push code to the github repo "default on main branch"
+            - main
+            # - '! feature/*'
+
+# kind of events
+# on: pull_request -> trigger workflow after pull request approval
+# on: workflow_dispatch -> trigger workflow mannually on actions sections
+
+jobs:  # mandatory to be named "jobs"
+    first_job:  # can be named with anything
+        runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
+        steps:      # like command you will run on GitHub Cloud
+            - name: list files
+              run: echo "CICD"
+
+
+
+    
