@@ -16,13 +16,13 @@ jobs:  # mandatory to be named "jobs"
         runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
         steps:      # like command you will run on GitHub Cloud
             - name: list files
-              run: echo "CICD"
-    second_job:  # can be named with anything
-        needs: first_job #start running second_job after first_job1 finishes
-        runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
-        steps:      # like command you will run on GitHub Cloud
-            - name: list files
-              run: echo "CICD"
+              run: ./script.sh
+    # second_job:  # can be named with anything
+    #     needs: first_job #start running second_job after first_job1 finishes
+    #     runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
+    #     steps:      # like command you will run on GitHub Cloud
+    #         - name: list files
+    #           run: echo "CICD"
 
 
 
