@@ -11,7 +11,14 @@ on:
 # on: workflow_dispatch -> trigger workflow mannually on actions sections
 
 jobs:  # mandatory to be named "jobs"
+    # each job runs parallel in seperate vm
     first_job:  # can be named with anything
+        runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
+        steps:      # like command you will run on GitHub Cloud
+            - name: list files
+              run: echo "CICD"
+    second_job:  # can be named with anything
+        needs: first_job #start running second_job after first_job1 finishes
         runs-on: ubuntu-latest #means will work on github machine, you can use self host runner
         steps:      # like command you will run on GitHub Cloud
             - name: list files
