@@ -12,7 +12,7 @@ jobs:
       - name: step 1-install cowsay package
         run: sudo apt install cowsay
       
-      - name: step 2-exeute cowsay
+      - name: step 2- exeute cowsay
         run: cowsay -e @@ Hello >> cow.txt
 
       - name: step 3- test file exist
@@ -20,6 +20,25 @@ jobs:
 
       - name: step 4- read file
         run: cat cow.txt
+
+      - name: step 5- upload the file to github backend
+        uses: actions/upload-artifact@v4
+        with:
+          name: cowsay
+          path: cowsay.txt
+
+  shared-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download artifcat
+        uses: actions/download-artifact@v4
+        with:
+          name: cowsay
+      
+
+      - name: check the artifact
+        run: grep -i "hello" cow.txt
+
 
       
       
