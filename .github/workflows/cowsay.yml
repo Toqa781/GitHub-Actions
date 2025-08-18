@@ -28,6 +28,7 @@ jobs:
           path: cowsay.txt
 
   shared-files:
+    needs: install-cowsay
     runs-on: ubuntu-latest
     steps:
       - name: download artifcat
