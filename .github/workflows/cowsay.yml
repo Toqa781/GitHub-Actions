@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cowsay
-          path: cowsay.txt
+          path: cow.txt
 
   shared-files:
     needs: install-cowsay
@@ -38,7 +38,7 @@ jobs:
       
 
       - name: check the artifact
-        run: grep -i "hello" cowsay.txt
+        run: grep -i "hello" cow.txt
 
 
       
