@@ -24,7 +24,7 @@ jobs:
                 node-version: ${{ matrix.node }}
 
             - name: rn linux commands
-              run: |
+              run: | 
                 uname -a
                 node -v
                 echo "hello from matrix job"
