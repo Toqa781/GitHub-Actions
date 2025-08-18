@@ -12,7 +12,7 @@ jobs:
       - name: step 1-install cowsay package
         run: sudo apt install cowsay
       
-      - name: step 2- exeute cowsay
+      - name: step 2-exeute cowsay
         run: cowsay -e @@ Hello >> cow.txt
 
       - name: step 3- test file exist
