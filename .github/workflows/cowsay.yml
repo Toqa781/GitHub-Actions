@@ -38,7 +38,7 @@ jobs:
       
 
       - name: check the artifact
-        run: grep -i "hello" cowsay/cow.txt
+        run: grep -i "hello" cowsay.txt
 
 
       
