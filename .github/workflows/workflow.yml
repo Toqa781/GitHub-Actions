@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v5
 
       - name: step 2- run the bash script
-        run: ./script.sh
+        run: ./script.sh 
